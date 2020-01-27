@@ -6,15 +6,15 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 
 #텔레그램 봇 설정
-my_token = '1032194001:AAF3v9R80ExDqIcO7cct_ZJZpRbP_-IkRB8'
+my_token = '' #봇 토큰을 입력
 bot = telegram.Bot(my_token)
 updates = bot.get_updates()
 #chat_id = bot.get_updates()[-1].message.chat.id #최근 채팅한 사람에게 전달.
-chat_id = -328584120
+chat_id = 1 #그룹 id를 입력하거나 사용자 id를 입력
 
 options = webdriver.ChromeOptions()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# headless 옵션 설정
+# headless 옵션 설정 #라즈베리파이의 경우 headless 모드에서 에러가 발생하여 headless 모드는 사용 못함.
 options.add_argument('headless')
 options.add_argument("no-sandbox")
 
